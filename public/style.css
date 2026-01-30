@@ -1,0 +1,95 @@
+@font-face {
+  font-family: 'SpaceMono';
+  src: url(SpaceMono-Bold.ttf);
+}
+
+body{
+  background-color: rgb(4, 4, 20);
+}
+
+
+* {
+  margin: 0;
+  padding: 0;
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+.text{
+  display: flex;
+  position: absolute;
+  color: aliceblue;
+  background-color: transparent;
+  font-family: 'SpaceMono';
+  font-size: 2vw;
+  margin-left: 5%;
+  margin-right: 20%;
+}
+
+
+@media only screen and (orientation: portrait){
+  #videoBG{
+      display: flex;
+      overflow: hidden;
+      max-width: auto;
+      height: auto;
+      position: absolute;
+      mask-image: linear-gradient(to bottom, black 60%, transparent 100%);
+      -webkit-mask-image: linear-gradient(to bottom, black 60%, transparent 100%);
+  }
+
+  #landingPNG{
+      display: flex;
+      overflow: hidden;
+      max-width: auto;
+      height: auto;
+      position: absolute;
+  }
+
+
+  #splashText{
+    display: flex;
+    overflow: hidden;
+    position: absolute;
+    font-size: 10vw;
+    font-family: 'SpaceMono';
+    color: aliceblue;
+    margin-left: 5%;
+    margin-top: 10%;
+    letter-spacing: -0.5vw;
+  }
+}
+@media only screen and (orientation: landscape){
+  #videoBG{
+      display: flex;
+      overflow: hidden;
+      max-width: auto;
+      height: auto;
+      position: absolute;
+      mask-image: linear-gradient(to bottom, black 60%, transparent 100%);
+      -webkit-mask-image: linear-gradient(to bottom, black 60%, transparent 100%);
+  }
+
+  #landingPNG{
+      display: flex;
+      overflow: hidden;
+      max-width: auto;
+      height: auto;
+      position: absolute;
+  }
+
+
+  #splashText{
+    display: flex;
+    overflow: hidden;
+    position: absolute;
+    font-size: 10vw;
+    font-family: 'SpaceMono';
+    color: aliceblue;
+    margin-left: 5%;
+    margin-top: 10%;
+    letter-spacing: -0.5vw;
+  }
+}
+
+
