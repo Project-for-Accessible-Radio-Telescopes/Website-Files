@@ -114,32 +114,54 @@ function setupMenu() {
 }
 
 function setupVideoScrub() {
-    window.addEventListener("mousemove", (event) => {
-        // We first need to find if the mouse is on one of the sections
-        // If it is, then we don't want to scrub the video, since the user is likely trying to read the text
-        const sections = document.querySelectorAll(".content-section");
+    const sections = document.querySelectorAll(".content-section");
+    const sectionRects = [];
+    function computeSectionRects() {
+        sectionRects.length = 0;
         for (const section of sections) {
-             const rect = section.getBoundingClientRect();
-             if (
-                 event.clientX >= rect.left &&
-                 event.clientX <= rect.right &&
-                 event.clientY >= rect.top &&
-                 event.clientY <= rect.bottom
-             ) {
-                 return; // Mouse is over a section, don't scrub
-             }
+            sectionRects.push(section.getBoundingClientRect());
         }
-
-        if (!animBG || !Number.isFinite(animBG.duration) || animBG.duration <= 0) {
+    }
+    // Initial computation and updates on layout changes
+    computeSectionRects();
+    window.addEventListener("resize", computeSectionRects);
+    window.addEventListener("scroll", computeSectionRects, { passive: true });
+    let lastMouseEvent = null;
+    let mouseMoveScheduled = false;
+    window.addEventListener("mousemove", (event) => {
+        lastMouseEvent = event;
+        if (mouseMoveScheduled) {
             return;
         }
-
-        if (reverseActive) {
-            stopReversePlayback();
-        }
-
-        const progress = event.clientX / Math.max(window.innerWidth, 1);
-        animBG.currentTime = progress * animBG.duration;
+        mouseMoveScheduled = true;
+        requestAnimationFrame(() => {
+            mouseMoveScheduled = false;
+            const e = lastMouseEvent;
+            if (!e) {
+                return;
+            }
+            // We first need to find if the mouse is on one of the sections
+            // If it is, then we don't want to scrub the video, since the user is likely trying to read the text
+            for (let i = 0; i < sectionRects.length; i++) {
+                const rect = sectionRects[i];
+                if (
+                    e.clientX >= rect.left &&
+                    e.clientX <= rect.right &&
+                    e.clientY >= rect.top &&
+                    e.clientY <= rect.bottom
+                ) {
+                    return; // Mouse is over a section, don't scrub
+                }
+            }
+            if (!animBG || !Number.isFinite(animBG.duration) || animBG.duration <= 0) {
+                return;
+            }
+            if (reverseActive) {
+                stopReversePlayback();
+            }
+            const progress = e.clientX / Math.max(window.innerWidth, 1);
+            animBG.currentTime = progress * animBG.duration;
+        });
     });
 }
 
