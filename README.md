@@ -1,5 +1,5 @@
 # PART Website
-Client-side website files for the our official website:
+Client-side website files for our official website:
 https://parttelescopes.web.app/
 
 ## Overview
