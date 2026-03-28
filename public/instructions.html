@@ -6,9 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Setup and workflow instructions for PART telescopes">
     <title>PART Instructions</title>
-    <link rel="stylesheet" href="style.css">
-    <script src="env-config.js"></script>
-    <script type="module" src="main.js"></script>
+    <link rel="stylesheet" href="styles/style.css">
+    <script src="config/env-config.js"></script>
+    <script type="module" src="scripts/main.js"></script>
 </head>
 
 <body>
@@ -33,31 +33,38 @@
         <section class="page-intro">
             <p class="page-kicker">WORKFLOW</p>
             <h1 class="page-title">Instructions</h1>
-            <p class="hero-subtitle">Use this sequence to get from setup to 21 cm signal analysis.</p>
+            <p class="hero-subtitle">Scroll down and complete each step in order to move from setup to 21 cm signal analysis.</p>
+            <p class="scroll-cue">Scroll to begin ↓</p>
         </section>
 
-        <section class="content-section">
-            <h2>1. Installation</h2>
-            <p>Install required software and drivers, including RTL-SDR dependencies and project scripts.</p>
-            <p>Confirm your SDR is recognized before starting any recording sessions.</p>
-        </section>
+        <section class="instruction-flow" aria-label="Step-by-step PART workflow">
+            <article class="content-section instruction-step" data-step>
+                <p class="step-label">STEP 1</p>
+                <h2>Installation</h2>
+                <p>Install required software and drivers, including RTL-SDR dependencies and project scripts.</p>
+                <p>Confirm your SDR is recognized before starting any recording sessions.</p>
+            </article>
 
-        <section class="content-section">
-            <h2>2. Data Collection</h2>
-            <p>Prepare dish alignment, verify amplifier and filter wiring, and run baseline recordings.</p>
-            <p>Record with consistent gain settings and save metadata for each observation.</p>
-        </section>
+            <article class="content-section instruction-step" data-step>
+                <p class="step-label">STEP 2</p>
+                <h2>Data Collection</h2>
+                <p>Prepare dish alignment, verify amplifier and filter wiring, and run baseline recordings.</p>
+                <p>Record with consistent gain settings and save metadata for each observation.</p>
+            </article>
 
-        <section class="content-section">
-            <h2>3. Processing</h2>
-            <p>Run the processing pipeline to convert raw SDR captures into analyzable spectra.</p>
-            <p>Compare output against reference frequency ranges around the 21 cm line.</p>
-        </section>
+            <article class="content-section instruction-step" data-step>
+                <p class="step-label">STEP 3</p>
+                <h2>Processing</h2>
+                <p>Run the processing pipeline to convert raw SDR captures into analyzable spectra.</p>
+                <p>Compare output against reference frequency ranges around the 21 cm line.</p>
+            </article>
 
-        <section class="content-section">
-            <h2>4. Validation</h2>
-            <p>Repeat observations where possible and compare trends over multiple sessions.</p>
-            <p>Log anomalies so your team can refine hardware configuration and calibration.</p>
+            <article class="content-section instruction-step" data-step>
+                <p class="step-label">STEP 4</p>
+                <h2>Validation</h2>
+                <p>Repeat observations where possible and compare trends over multiple sessions.</p>
+                <p>Log anomalies so your team can refine hardware configuration and calibration.</p>
+            </article>
         </section>
     </main>
 

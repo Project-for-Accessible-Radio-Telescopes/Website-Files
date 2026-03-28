@@ -145,6 +145,29 @@ function createLandingVideo() {
     document.body.prepend(video);
 }
 
+function setupInstructionFlow() {
+    const steps = Array.from(document.querySelectorAll("[data-step]"));
+    if (steps.length === 0) {
+        return;
+    }
+
+    document.body.classList.add("has-step-animations");
+
+    const observer = new IntersectionObserver((entries) => {
+        for (const entry of entries) {
+            entry.target.classList.toggle("is-visible", entry.isIntersecting);
+        }
+    }, {
+        threshold: 0.35,
+        rootMargin: "0px 0px -12% 0px"
+    });
+
+    steps.forEach((step, index) => {
+        step.style.transitionDelay = `${Math.min(index * 70, 250)}ms`;
+        observer.observe(step);
+    });
+}
+
 function setupMenu() {
     const menuToggle = document.getElementById("menuToggle");
     const menu = document.getElementById("siteNav");
@@ -453,8 +476,8 @@ async function setupFirebaseFeatures() {
     const adminMessage = document.getElementById("adminMessage");
 
     if (!hasFirebaseConfig()) {
-        setStatus(newsStatus, "Firebase is not configured yet. Add values to public/env-config.js.", "status-error");
-        setStatus(adminMessage, "Firebase Auth is disabled until public/env-config.js is configured.", "status-error");
+        setStatus(newsStatus, "Firebase is not configured yet. Add values to public/config/env-config.js.", "status-error");
+        setStatus(adminMessage, "Firebase Auth is disabled until public/config/env-config.js is configured.", "status-error");
         return;
     }
 
@@ -484,6 +507,7 @@ async function setupFirebaseFeatures() {
 
 document.addEventListener("DOMContentLoaded", () => {
     setupMenu();
+    setupInstructionFlow();
 
     if (!isMobile()) {
         createLandingVideo();

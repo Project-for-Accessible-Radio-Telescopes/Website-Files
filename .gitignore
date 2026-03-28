@@ -1,2 +1,3 @@
 public/.env
+public/config/env-config.js
 public/env-config.js
