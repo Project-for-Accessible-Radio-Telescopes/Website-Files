@@ -1,5 +1,5 @@
 # PART Website
-Client-side website files for the official PART website:
+Client-side website files for the our official website:
 https://parttelescopes.web.app/
 
 ## Overview
@@ -11,6 +11,8 @@ This project is a static website (HTML/CSS/JS) with Firebase-backed features:
 4. Admin-only news publishing UI
 
 No build step is required. Files are served directly from `public/`.
+
+*NOTE: This website is intended to be hosted as a **Firebase app**. We have not tested it on any other hosting option. If you choose a non-Firebase provider to host this application, you may encounter difficulties or bugs not documented in this manual*.
 
 ## Table of Contents
 
@@ -50,6 +52,12 @@ http://localhost:8080
 
 4. Configure runtime values in `public/config/env-config.js`.
 5. Refresh the page.
+
+If you choose to run it as a static site:
+
+1. Change the src of the script in all files from `<script type="module" src="scripts/main.js"></script>` to `<script src="scripts/vanilla.js"></script>`.
+2. You can directly double-click `public/index.html` to run it statically.
+3. Note: static runtimes DO NOT support cloud-based features such as News and Admin.
 
 ## Project Structure
 
@@ -227,7 +235,8 @@ service cloud.firestore {
 ### Acknowledgements
 
 1. Kevin Fang as the main developer
-2. Firebase for no-cost static hosting and backend services
-3. Science Mentors ACT and Narrabundah College
+2. Yanfu Fan as the co-developer and the PART Contributors
+3. Firebase for no-cost static hosting and backend services
+4. Science Mentors ACT and Narrabundah College
 
 Licensed under the MIT License. Refer to `LICENSE` for full terms.
