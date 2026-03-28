@@ -7,23 +7,25 @@
     <meta name="description" content="The PART Initiative - Official Website">
     <title>The PART Initiative</title>
     <link rel="stylesheet" href="style.css">
-    <script src="main.js" defer></script>
+    <script src="env-config.js"></script>
+    <script type="module" src="main.js"></script>
 </head>
 
 <body>
     <img src="GalaxyBG-2-Still.jpg" id="landingPNG" alt="Galaxy background">
 
     <div class="site-header">
-        <a class="brand" href="#home">PART Telescopes</a>
+        <a class="brand" href="index.html">PART Telescopes</a>
         <button class="menu-toggle" id="menuToggle" aria-expanded="false" aria-controls="siteNav" aria-label="Open navigation menu">
             <span></span>
             <span></span>
             <span></span>
         </button>
         <nav class="menu" id="siteNav">
-            <a href="#home">Home</a>
-            <a href="#instructions">Instructions</a>
-            <a href="#about">About Us</a>
+            <a href="index.html" class="is-current">Home</a>
+            <a href="news.html">News</a>
+            <a href="instructions.html">Instructions</a>
+            <a href="about.html">About Us</a>
         </nav>
     </div>
 
@@ -33,54 +35,63 @@
             <p class="hero-subtitle">
                 Designing low-cost radio telescopes and open software to bring astronomy within reach of rural schools.
             </p>
+            <div class="hero-cta-row">
+                <a class="hero-cta" href="news.html">View News</a>
+                <a class="hero-cta" href="instructions.html">Get Started</a>
+            </div>
         </div>
 
-        <div class="content-section" id="instructions">
-            <h2>Instructions</h2>
-            <p>
-                Access setup guides and project resources through the documentation menu. We recommend starting with installation instructions,
-                then following the software workflow for recording and processing data from RTL-SDR devices.
-            </p>
+        <div class="content-section">
+            <h2>Explore the Project</h2>
+            <div class="quick-grid">
+                <a class="quick-card" href="news.html">
+                    <h3>News Room</h3>
+                    <p>Read all official updates, milestones, and field testing notes from the team.</p>
+                </a>
+                <a class="quick-card" href="instructions.html">
+                    <h3>Build Instructions</h3>
+                    <p>Follow setup guides for installation, data recording, and signal processing workflows.</p>
+                </a>
+                <a class="quick-card" href="about.html">
+                    <h3>About PART</h3>
+                    <p>Learn about our mission to deliver affordable radio astronomy tools to rural schools.</p>
+                </a>
+                <a class="quick-card" href="admin.html">
+                    <h3>Admin Console</h3>
+                    <p>Authorized team members can sign in and publish fresh news to the website.</p>
+                </a>
+            </div>
         </div>
 
-        <div class="content-section" id="about">
-            <h2>About Us</h2>
-            <p>
-                Our names are Narayan Dwan-Holland, Aliana He, Kevin Fang, Emma Enyu Zhang and Yanfu Fan.
-            </p>
-            <p>
-                As students from Narrabundah College, ACT, and participants of the Science Mentors ACT program, the Project for Accessible
-                Radio Telescopes (PART) is our initiative aimed at designing, manufacturing and distributing telescopes for rural educators
-                and students to support their study of astronomy.
-            </p>
-            <p>
-                We aim to produce a simple but reliable telescope design with a total production and assembly cost under $500.00, capable
-                of recording signals at the 21 cm line, an important frequency band associated with galactic hydrogen. Our design consists
-                of a commercially available weather satellite dish and a conductive plastic base to collect signal, alongside a signal
-                processing system with low-noise amplifiers, bandpass filters, a software-defined radio and a motor system.
-            </p>
-            <p>
-                We seek to manufacture 25 such telescopes to distribute freely among rural high schools and colleges. Due to monetary and
-                accessibility constraints, many rural Australian schools are unable to afford telescopes and are limited in their study of
-                the universe. We aim to empower affected students and educators by providing the equipment and knowledge needed to engage in
-                astronomy.
-            </p>
-            <p>
-                In doing so, we hope to address the contrast in education between urban and rural Australian settings. According to a 2023
-                report by the Department of Education, the average 15-year-old in remote Australia is 1.5 years behind metropolitan students
-                in STEM subjects. We aim to combat this by increasing access to accurate scientific instruments and enabling higher quality
-                contributions to astronomical research.
-            </p>
+        <div class="content-section" id="news">
+            <h2>Latest News Overview</h2>
+            <p class="section-note">Recent updates from our live Firebase feed.</p>
+            <div id="newsStatus" class="status-text">Loading news...</div>
+            <div id="newsList" class="news-list news-list-compact" data-limit="3" aria-live="polite"></div>
+            <p class="more-link-wrap"><a class="news-link" href="news.html">Open full News page</a></p>
         </div>
 
         <div class="content-section" id="helper-sources">
             <h2>Proudly Supported By</h2>
             <ul class="supporterlist">
-                <li><a href="https://www.sciencementorsact.org.au/"><img src="./ScienceMentorsLogo.png" alt="Science Mentors ACT Logo" class="supportlogo"></a><p>Science Mentors ACT</p></li>
-                <li><a href="https://www.narrabundahc.act.edu.au/"><img src="./bundahlogo.png" class="supportlogo" alt="Narrabundah College Logo"></a><p>Narrabundah College</p></li>
+                <li><a href="https://www.sciencementorsact.org.au/"><img src="ScienceMentorsLogo.png" alt="Science Mentors ACT Logo" class="supportlogo"></a><p>Science Mentors ACT</p></li>
+                <li><a href="https://www.narrabundahc.act.edu.au/"><img src="bundahlogo.png" class="supportlogo" alt="Narrabundah College Logo"></a><p>Narrabundah College</p></li>
             </ul>
         </div>
+
+        <div class="content-section">
+            <h2>Project Snapshot</h2>
+            <p>
+                PART aims to develop reliable low-cost radio telescopes under $500, capable of recording at the 21 cm line, then distribute
+                them free to rural schools with open educational documentation.
+            </p>
+        </div>
     </main>
+
+    <footer class="site-footer">
+        <p>PART Initiative • Accessible radio astronomy for every classroom.</p>
+        <a class="admin-access-link" href="admin.html">Admin Access</a>
+    </footer>
 </body>
 
 </html>

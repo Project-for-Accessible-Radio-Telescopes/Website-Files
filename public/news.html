@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Latest updates from the PART Initiative">
+    <title>PART News</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="env-config.js"></script>
+    <script type="module" src="main.js"></script>
+</head>
+
+<body>
+    <img src="GalaxyBG-2-Still.jpg" id="landingPNG" alt="Galaxy background">
+
+    <div class="site-header">
+        <a class="brand" href="index.html">PART Telescopes</a>
+        <button class="menu-toggle" id="menuToggle" aria-expanded="false" aria-controls="siteNav" aria-label="Open navigation menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+        <nav class="menu" id="siteNav">
+            <a href="index.html">Home</a>
+            <a href="news.html" class="is-current">News</a>
+            <a href="instructions.html">Instructions</a>
+            <a href="about.html">About Us</a>
+        </nav>
+    </div>
+
+    <main>
+        <section class="page-intro">
+            <p class="page-kicker">PART JOURNAL</p>
+            <h1 class="page-title">News and Updates</h1>
+            <p class="hero-subtitle">Follow project milestones, telescope build progress, and releases from our team.</p>
+        </section>
+
+        <section class="content-section" id="news">
+            <h2>All News Posts</h2>
+            <p class="section-note">This page shows our complete live feed from Firebase Firestore.</p>
+            <div id="newsStatus" class="status-text">Loading news...</div>
+            <div id="newsList" class="news-list" data-limit="30" aria-live="polite"></div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <p>PART Initiative • Accessible radio astronomy for every classroom.</p>
+        <a class="admin-access-link" href="admin.html">Admin Access</a>
+    </footer>
+</body>
+
+</html>
