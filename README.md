@@ -62,7 +62,7 @@ If you choose to run it as a static site:
 ## Project Structure
 
 ```txt
-protoweb1/
+websitefiles/
 	README.md
 	.gitignore
 	public/
