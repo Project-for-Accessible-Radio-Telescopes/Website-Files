@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Setup and workflow instructions for PART telescopes">
+    <title>PART Instructions</title>
+    <link rel="stylesheet" href="styles/style.css">
+    <script src="config/env-config.js"></script>
+    <script type="module" src="scripts/main.js"></script>
+</head>
+
+<body>
+    <img src="GalaxyBG-2-Still.jpg" id="landingPNG" alt="Galaxy background">
+
+    <div class="site-header">
+        <a class="brand" href="index.html">PART Telescopes</a>
+        <button class="menu-toggle" id="menuToggle" aria-expanded="false" aria-controls="siteNav" aria-label="Open navigation menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+        <nav class="menu" id="siteNav">
+            <a href="index.html">Home</a>
+            <a href="news.html">News</a>
+            <a href="instructions.html" class="is-current">Instructions</a>
+            <a href="about.html">About Us</a>
+        </nav>
+    </div>
+
+    <main>
+        <section class="page-intro">
+            <p class="page-kicker">WORKFLOW</p>
+            <h1 class="page-title">Instructions</h1>
+            <p class="hero-subtitle">Scroll down and complete each step in order to move from setup to 21 cm signal analysis.</p>
+            <p class="scroll-cue">Scroll to begin ↓</p>
+        </section>
+
+        <section class="instruction-flow" aria-label="Step-by-step PART workflow">
+            <article class="content-section instruction-step" data-step>
+                <p class="step-label">STEP 1</p>
+                <h2>Installation</h2>
+                <p>Install required software and drivers, including RTL-SDR dependencies and project scripts.</p>
+                <p>Confirm your SDR is recognized before starting any recording sessions.</p>
+            </article>
+
+            <article class="content-section instruction-step" data-step>
+                <p class="step-label">STEP 2</p>
+                <h2>Data Collection</h2>
+                <p>Prepare dish alignment, verify amplifier and filter wiring, and run baseline recordings.</p>
+                <p>Record with consistent gain settings and save metadata for each observation.</p>
+            </article>
+
+            <article class="content-section instruction-step" data-step>
+                <p class="step-label">STEP 3</p>
+                <h2>Processing</h2>
+                <p>Run the processing pipeline to convert raw SDR captures into analyzable spectra.</p>
+                <p>Compare output against reference frequency ranges around the 21 cm line.</p>
+            </article>
+
+            <article class="content-section instruction-step" data-step>
+                <p class="step-label">STEP 4</p>
+                <h2>Validation</h2>
+                <p>Repeat observations where possible and compare trends over multiple sessions.</p>
+                <p>Log anomalies so your team can refine hardware configuration and calibration.</p>
+            </article>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <p>PART Initiative • Accessible radio astronomy for every classroom.</p>
+        <a class="admin-access-link" href="admin.html">Admin Access</a>
+    </footer>
+</body>
+
+</html>
